@@ -1,0 +1,21 @@
+---
+  '':
+    - ttl: 300
+      type: MX
+      values:
+        - exchange: mx1.mailchannels.net.
+          preference: 0
+        - exchange: mx2.mailchannels.net.
+          preference: 10
+    - ttl: 300
+      type: TXT
+      values: 
+        - "v=spf1 mx include:netblocks.dreamhost.com include:relay.mailchannels.net ~all"
+    - ttl: 300
+      type: A
+      value: 104.199.117.69
+  
+  www:
+    - ttl: 300
+      type: CNAME
+      value: tcares.org.
