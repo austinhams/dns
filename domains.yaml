@@ -1,0 +1,22 @@
+---
+providers:
+  config:
+    class: octodns.provider.yaml.YamlProvider
+    directory: ./domains
+    enforce_order: false
+
+  digitalocean:
+    class: octodns_digitalocean.DigitalOceanProvider
+    token: env/DIGITALOCEAN_TOKEN
+zones:
+  austinhams.org.:
+    sources:
+      - config
+    targets:
+      - digitalocean
+
+  tcares.org.:
+    sources:
+      - config
+    targets:
+      - digitalocean
